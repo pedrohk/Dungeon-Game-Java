@@ -14,41 +14,35 @@
 	<name>Dungeon-Game-Java</name>
 	<description>Dungeon Game Spring Boot</description>
 	<url/>
-	<licenses>
-		<license/>
-	</licenses>
-	<developers>
-		<developer/>
-	</developers>
-	<scm>
-		<connection/>
-		<developerConnection/>
-		<tag/>
-		<url/>
-	</scm>
 	<properties>
-		<java.version>23</java.version>
+		<gatling.version>3.10.5</gatling.version>
+		<gatling-maven-plugin.version>4.10.0</gatling-maven-plugin.version>
 	</properties>
+
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
+
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
 		</dependency>
+
 		<dependency>
 			<groupId>org.postgresql</groupId>
 			<artifactId>postgresql</artifactId>
 			<version>42.7.3</version>
 			<scope>runtime</scope>
 		</dependency>
+
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
 			<optional>true</optional>
 		</dependency>
+
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
@@ -58,55 +52,62 @@
 		<dependency>
 			<groupId>com.fasterxml.jackson.core</groupId>
 			<artifactId>jackson-databind</artifactId>
-			<version>2.17.1</version>
 		</dependency>
+
 		<dependency>
 			<groupId>io.gatling</groupId>
 			<artifactId>gatling-core</artifactId>
-			<version>3.10.5</version>
+			<version>${gatling.version}</version>
 			<scope>test</scope>
 		</dependency>
 		<dependency>
 			<groupId>io.gatling</groupId>
 			<artifactId>gatling-http</artifactId>
-			<version>3.10.5</version>
+			<version>${gatling.version}</version>
 			<scope>test</scope>
 		</dependency>
 		<dependency>
 			<groupId>io.gatling</groupId>
 			<artifactId>gatling-test-framework</artifactId>
-			<version>3.10.5</version>
+			<version>${gatling.version}</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>io.gatling</groupId>
+			<artifactId>gatling-core-java</artifactId>
+			<version>${gatling.version}</version>
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
 
 	<build>
+		<pluginManagement>
+			<plugins>
+				<!-- Spring Boot Maven Plugin: For packaging executable JARs -->
+				<plugin>
+					<groupId>org.springframework.boot</groupId>
+					<artifactId>spring-boot-maven-plugin</artifactId>
+					<version>${project.parent.version}</version>
+					<configuration>
+						<excludes>
+							<exclude>
+								<groupId>org.projectlombok</groupId>
+								<artifactId>lombok</artifactId>
+							</exclude>
+						</excludes>
+					</configuration>
+				</plugin>
+			</plugins>
+		</pluginManagement>
 		<plugins>
 			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
+				<groupId>io.gatling</groupId>
+				<artifactId>gatling-maven-plugin</artifactId>
+				<version>${gatling-maven-plugin.version}</version>
+				<configuration>
+					<simulationClass>com.pedrohk.dungeon_game_java.DungeonGameSimulation</simulationClass>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>
-	<repositories>
-		<repository>
-			<id>spring-snapshots</id>
-			<name>Spring Snapshots</name>
-			<url>https://repo.spring.io/snapshot</url>
-			<releases>
-				<enabled>false</enabled>
-			</releases>
-		</repository>
-	</repositories>
-	<pluginRepositories>
-		<pluginRepository>
-			<id>spring-snapshots</id>
-			<name>Spring Snapshots</name>
-			<url>https://repo.spring.io/snapshot</url>
-			<releases>
-				<enabled>false</enabled>
-			</releases>
-		</pluginRepository>
-	</pluginRepositories>
-
 </project>
