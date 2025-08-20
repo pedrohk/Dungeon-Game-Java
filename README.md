@@ -172,24 +172,14 @@ All tests for the solver logic will run and results will be displayed in the con
 
 ---
 
-## 📂 Project Structure (Overview)
+## Running Gatling simulation
 
-```
-dungeon-game-Java/
-├── src/
-│   ├── main/
-│   │   ├── java/
-│   │   │   └── com/pedrohk/dungeon/
-│   │   │       ├── controller/
-│   │   │       ├── model/
-│   │   │       ├── repository/
-│   │   │       ├── service/
-│   │   │       └── DungeonGameJavaApplication.java
-│   │   └── resources/
-│   │       └── application.properties
-│   └── test/
-│       └── java/
-│           └── com/pedrohk/dungeon/
-│               └── solver/
-│                   └── DungeonGameJavaTest.java
+To run the Gatling simulation, use the following command:
+
+```bash
+mvn gatling:test
+````
+
+Make sure your Spring Boot application is up and running at `http://localhost:8080` **before** executing the Gatling test.
+
 ```
