@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.pedrohk.Dungeon_Game_Java.DungeonGameSolverTest
+-------------------------------------------------------------------------------
+Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.078 s -- in com.pedrohk.Dungeon_Game_Java.DungeonGameSolverTest

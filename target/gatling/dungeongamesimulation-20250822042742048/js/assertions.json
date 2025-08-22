@@ -1,0 +1,10 @@
+{
+  "simulation": "com.pedrohk.Dungeon_Game_Java.DungeonGameSimulation",
+  "simulationId": "dungeongamesimulation-20250822042742048",
+  "start": 1755836863383,
+  "description": "",
+  "scenarios": ["Dungeon Game Solving Scenario"],
+  "assertions": [
+
+  ]
+}

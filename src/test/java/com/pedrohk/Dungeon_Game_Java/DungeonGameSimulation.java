@@ -5,6 +5,7 @@ import io.gatling.javaapi.core.ScenarioBuilder;
 import io.gatling.javaapi.core.Simulation;
 import io.gatling.javaapi.http.HttpProtocolBuilder;
 
+
 import java.time.Duration;
 
 import static io.gatling.javaapi.core.CoreDsl.StringBody;
@@ -38,7 +39,7 @@ public class DungeonGameSimulation extends Simulation {
 
     {
         setUp(
-                scn.inject(
+                scn.injectOpen(
                         rampUsers(100).during(Duration.ofSeconds(10))
                 )
         ).protocols(httpProtocol);

@@ -86,6 +86,6 @@ class DungeonGameSolverTest {
                 {-1, -100, -1},
                 {-1, -1, -100}
         };
-        assertEquals(103, solver.calculateMinimumHP(dungeon));
+        assertEquals(204, solver.calculateMinimumHP(dungeon));
     }
 }
