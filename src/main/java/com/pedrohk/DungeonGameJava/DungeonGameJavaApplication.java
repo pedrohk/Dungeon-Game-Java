@@ -1,4 +1,4 @@
-package com.pedrohk.Dungeon_Game_Java;
+package com.pedrohk.DungeonGameJava;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

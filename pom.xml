@@ -117,7 +117,7 @@
 				<artifactId>gatling-maven-plugin</artifactId>
 				<version>${gatling-maven-plugin.version}</version>
 				<configuration>
-					<simulationClass>com.pedrohk.Dungeon_Game_Java.DungeonGameSimulation</simulationClass>
+					<simulationClass>com.pedrohk.DungeonGameJava.DungeonGameSimulation</simulationClass>
 				</configuration>
 			</plugin>
 		</plugins>

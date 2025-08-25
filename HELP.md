@@ -1,7 +1,7 @@
 # Read Me First
 The following was discovered as part of building this project:
 
-* The original package name 'com.pedrohk.Dungeon-Game-Java' is invalid and this project uses 'com.pedrohk.Dungeon_Game_Java' instead.
+* The original package name 'com.pedrohk.Dungeon-Game-Java' is invalid and this project uses 'com.pedrohk.DungeonGameJava' instead.
 
 # Getting Started
 

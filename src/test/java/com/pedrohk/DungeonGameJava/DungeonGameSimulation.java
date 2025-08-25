@@ -1,4 +1,4 @@
-package com.pedrohk.Dungeon_Game_Java;
+package com.pedrohk.DungeonGameJava;
 
 import io.gatling.javaapi.core.ChainBuilder;
 import io.gatling.javaapi.core.ScenarioBuilder;

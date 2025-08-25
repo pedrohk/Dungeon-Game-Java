@@ -1,4 +1,4 @@
-package com.pedrohk.Dungeon_Game_Java.service;
+package com.pedrohk.DungeonGameJava.service;
 
 import org.springframework.stereotype.Service;
 

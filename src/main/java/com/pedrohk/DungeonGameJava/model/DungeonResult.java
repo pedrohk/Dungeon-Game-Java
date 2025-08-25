@@ -1,4 +1,4 @@
-package com.pedrohk.Dungeon_Game_Java.model;
+package com.pedrohk.DungeonGameJava.model;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;

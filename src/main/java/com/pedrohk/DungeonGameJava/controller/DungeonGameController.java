@@ -1,11 +1,12 @@
-package com.pedrohk.Dungeon_Game_Java.controller;
+package com.pedrohk.DungeonGameJava.controller;
 
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.pedrohk.Dungeon_Game_Java.model.DungeonResult;
-import com.pedrohk.Dungeon_Game_Java.repository.DungeonResultRepository;
-import com.pedrohk.Dungeon_Game_Java.service.DungeonGameSolver;
+import com.pedrohk.DungeonGameJava.model.DungeonResponse;
+import com.pedrohk.DungeonGameJava.model.DungeonResult;
+import com.pedrohk.DungeonGameJava.repository.DungeonResultRepository;
+import com.pedrohk.DungeonGameJava.service.DungeonGameSolver;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -15,8 +16,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.time.LocalDateTime;
-import java.util.HashMap;
-import java.util.Map;
 
 @RestController
 @RequestMapping("/api/dungeon")
@@ -36,11 +35,11 @@ public class DungeonGameController {
     }
 
     @PostMapping("/solve")
-    public ResponseEntity<Map<String, Object>> solveDungeon(@RequestBody int[][] dungeonMatrix) {
-        Map<String, Object> response = new HashMap<>();
+    public ResponseEntity<DungeonResponse> solveDungeon(@RequestBody int[][] dungeonMatrix) {
+        DungeonResponse response = new DungeonResponse();
 
         if (dungeonMatrix == null || dungeonMatrix.length == 0 || dungeonMatrix[0].length == 0) {
-            response.put("error", "Invalid dungeon matrix provided.");
+            response.setError("Invalid dungeon matrix provided.");
             return new ResponseEntity<>(response, HttpStatus.BAD_REQUEST);
         }
 
@@ -51,9 +50,9 @@ public class DungeonGameController {
         long endTime = System.nanoTime();
         long durationMillis = (endTime - startTime) / 1_000_000;
 
-        response.put("solution", minimumHP);
-        response.put("executionTimeMillis", durationMillis);
-        response.put("problemName", "Dungeon Game");
+        response.setSolution(minimumHP);
+        response.setExecutionTimeMillis(durationMillis);
+        response.setProblemName("Dungeon Game");
 
         try {
             String problemInputJson = objectMapper.writeValueAsString(dungeonMatrix);
@@ -67,15 +66,15 @@ public class DungeonGameController {
             result.setSolutionDetails("Solved using dynamic programming approach.");
 
             dungeonResultRepository.save(result);
-            response.put("status", "Solution calculated and saved to database.");
+            response.setStatus("Solution calculated and saved to database.");
 
         } catch (JsonProcessingException e) {
             System.err.println("Error converting dungeon matrix to JSON: " + e.getMessage());
-            response.put("status", "Solution calculated, but failed to save input to database (JSON conversion error).");
+            response.setStatus("Solution calculated, but failed to save input to database (JSON conversion error).");
             return new ResponseEntity<>(response, HttpStatus.INTERNAL_SERVER_ERROR);
         } catch (Exception e) {
             System.err.println("Error saving solution to database: " + e.getMessage());
-            response.put("status", "Solution calculated, but failed to save to database.");
+            response.setStatus("Solution calculated, but failed to save to database.");
             return new ResponseEntity<>(response, HttpStatus.INTERNAL_SERVER_ERROR);
         }
 

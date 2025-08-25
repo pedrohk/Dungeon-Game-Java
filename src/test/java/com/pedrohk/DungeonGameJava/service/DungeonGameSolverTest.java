@@ -1,6 +1,5 @@
-package com.pedrohk.Dungeon_Game_Java;
+package com.pedrohk.DungeonGameJava.service;
 
-import com.pedrohk.Dungeon_Game_Java.service.DungeonGameSolver;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -90,4 +89,3 @@ class DungeonGameSolverTest {
         assertEquals(204, solver.calculateMinimumHP(dungeon));
     }
 }
-
