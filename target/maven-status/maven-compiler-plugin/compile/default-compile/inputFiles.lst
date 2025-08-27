@@ -1,5 +1,6 @@
-C:\Users\Pedro\IdeaProjects\Dungeon-Game-Java\src\main\java\com\pedrohk\Dungeon_Game_Java\DungeonGameJavaApplication.java
-C:\Users\Pedro\IdeaProjects\Dungeon-Game-Java\src\main\java\com\pedrohk\Dungeon_Game_Java\repository\DungeonResultRepository.java
-C:\Users\Pedro\IdeaProjects\Dungeon-Game-Java\src\main\java\com\pedrohk\Dungeon_Game_Java\model\DungeonResult.java
-C:\Users\Pedro\IdeaProjects\Dungeon-Game-Java\src\main\java\com\pedrohk\Dungeon_Game_Java\controller\DungeonGameController.java
-C:\Users\Pedro\IdeaProjects\Dungeon-Game-Java\src\main\java\com\pedrohk\Dungeon_Game_Java\service\DungeonGameSolver.java
+C:\Users\Pedro\IdeaProjects\Dungeon-Game-Java\src\main\java\com\pedrohk\DungeonGameJava\repository\DungeonResultRepository.java
+C:\Users\Pedro\IdeaProjects\Dungeon-Game-Java\src\main\java\com\pedrohk\DungeonGameJava\controller\DungeonGameController.java
+C:\Users\Pedro\IdeaProjects\Dungeon-Game-Java\src\main\java\com\pedrohk\DungeonGameJava\DungeonGameJavaApplication.java
+C:\Users\Pedro\IdeaProjects\Dungeon-Game-Java\src\main\java\com\pedrohk\DungeonGameJava\model\DungeonResponse.java
+C:\Users\Pedro\IdeaProjects\Dungeon-Game-Java\src\main\java\com\pedrohk\DungeonGameJava\model\DungeonResult.java
+C:\Users\Pedro\IdeaProjects\Dungeon-Game-Java\src\main\java\com\pedrohk\DungeonGameJava\service\DungeonGameSolver.java

@@ -1,0 +1,10 @@
+{
+  "simulation": "com.pedrohk.DungeonGameJava.DungeonGameSimulation",
+  "simulationId": "dungeongamesimulation-20250827032458967",
+  "start": 1756265100325,
+  "description": "",
+  "scenarios": ["Basic Load with Dynamic Dungeon Matrices", "High Concurrency for Complex Dungeon", "Gradual Ramp-Up with Dynamic Data and Pause"],
+  "assertions": [
+
+  ]
+}
